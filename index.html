@@ -7,7 +7,7 @@
     <script type="text/javascript" src ="js/angular.min.js"></script>
     <script type="text/javascript" src ="js/angular-local-storage.js"></script>
     <script type="text/javascript" src ="js/controller.js"></script>
-    <title>Navegador</title>
+    <title>TODO LIST</title>
   </head>
   <body ng-controller='TodoController'>
 
@@ -47,7 +47,7 @@
         <div class="text-center">
           <br>
           <input type="submit" name="name" value="Agregar" class="btn btn-primary">
-          <input type="button" ng-click = 'limpiar()' name="name" value="Limpiar" class="btn btn-warning">
+          <input type="button" ng-click = 'limpiar()' name="limpiar" value="Limpiar" class="btn btn-info">
         </div>
         </form>
     </div>
@@ -64,23 +64,6 @@
       <script type="text/javascript">
           $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
       </script>
-      <script>
-      var path = './';
-      var fs = require('fs');
-
-      fs.watch(path, function() {
-        if (location)
-          location.reload();
-      });
-      var path1 = './js/';
-      var fs1 = require('fs');
-
-      fs1.watch(path1, function() {
-        if (location)
-          location.reload();
-      });
-    </script>
-
 
   </body>
 

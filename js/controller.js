@@ -35,7 +35,7 @@ angular.module('TodoList',['LocalStorageModule'])
   })
   .controller('TodoController',function($scope,TodoService){
       $scope.todo = TodoService.getAll();
-      //$scope.NewActividad = {};
+      $scope.NewActividad = {};
       $scope.Addactividad = function()
       {
           TodoService.add($scope.NewActividad);
