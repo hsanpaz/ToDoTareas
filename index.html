@@ -10,9 +10,7 @@
     <title>TODO LIST</title>
   </head>
   <body ng-controller='TodoController'>
-
     <div class="col-md-2">
-
     </div>
     <div class="col-md-8">
       <h1>Tareas</h1>
@@ -39,11 +37,10 @@
         </li>
       </ul>
       <form ng-submit = 'Addactividad()' method="post" role="form">
-
-              <label for="fecha">Fecha: </label>
-              <input type="datetime-local" ng-model = 'NewActividad.fecha' value="fecha" class="form-control">
-              <label for="descripcion">Descripcion:    </label>
-              <input type="text" ng-model='NewActividad.descripcion'  class="form-control">
+        <label for="fecha">Fecha: </label>
+        <input type="datetime-local" ng-model = 'NewActividad.fecha' value="fecha" class="form-control">
+        <label for="descripcion">Descripcion:    </label>
+        <input type="text" ng-model='NewActividad.descripcion'  class="form-control">
         <div class="text-center">
           <br>
           <input type="submit" name="name" value="Agregar" class="btn btn-primary">
@@ -52,19 +49,9 @@
         </form>
     </div>
     <div class="col-md-2">
-
     </div>
-
-
-      <script type="text/javascript" src ="plugins/jquery/js/jquery.js"></script>
-      <script type="text/javascript" src ="plugins/bootstrap/js/bootstrap.js"></script>
-      <script type="text/javascript" src ="plugins/datetimepicker/datetimepicker.js"></script>
-
-
-      <script type="text/javascript">
-          $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-      </script>
-
+    <script type="text/javascript" src ="plugins/jquery/js/jquery.js"></script>
+    <script type="text/javascript" src ="plugins/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src ="plugins/datetimepicker/datetimepicker.js"></script>
   </body>
-
 </html>
