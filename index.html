@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app='TodoList'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="plugins/datetimepicker/datetimepicker.css" media="screen" title="no title" charset="utf-8">
+    <script type="text/javascript" src ="js/angular.min.js"></script>
+    <script type="text/javascript" src ="js/angular-local-storage.js"></script>
+    <script type="text/javascript" src ="js/controller.js"></script>
+    <title>Navegador</title>
+  </head>
+  <body ng-controller='TodoController'>
+
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+      <h1>Tareas</h1>
+      <ul class="list-group">
+        <li ng-repeat='actividad in todo' class="list-group-item list-group-item-default" >
+            <table class="table">
+              <tr>
+                <td>
+                  <div class="text-lefth">
+                    <strong>
+                      {{ actividad.descripcion }}
+                    </strong>
+                    - {{ actividad.fecha | date: short}}
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href='#/nada' ng-click='removeitem(actividad)' class='btn btn-danger' >Eliminar</a>
+                </td>
+              </tr>
+            </table>
+
+        </li>
+      </ul>
+      <form ng-submit = 'Addactividad()' method="post" role="form">
+
+              <label for="fecha">Fecha: </label>
+              <input type="datetime-local" ng-model = 'NewActividad.fecha' value="fecha" class="form-control">
+              <label for="descripcion">Descripcion:    </label>
+              <input type="text" ng-model='NewActividad.descripcion'  class="form-control">
+        <div class="text-center">
+          <br>
+          <input type="submit" name="name" value="Agregar" class="btn btn-primary">
+          <input type="button" ng-click = 'limpiar()' name="name" value="Limpiar" class="btn btn-warning">
+        </div>
+        </form>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+
+
+      <script type="text/javascript" src ="plugins/jquery/js/jquery.js"></script>
+      <script type="text/javascript" src ="plugins/bootstrap/js/bootstrap.js"></script>
+      <script type="text/javascript" src ="plugins/datetimepicker/datetimepicker.js"></script>
+
+
+      <script type="text/javascript">
+          $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+      </script>
+      <script>
+      var path = './';
+      var fs = require('fs');
+
+      fs.watch(path, function() {
+        if (location)
+          location.reload();
+      });
+      var path1 = './js/';
+      var fs1 = require('fs');
+
+      fs1.watch(path1, function() {
+        if (location)
+          location.reload();
+      });
+    </script>
+
+
+  </body>
+
+</html>
